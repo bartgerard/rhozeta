@@ -27,6 +27,7 @@
 
 ## File-based project format:
 *.iws
+*.iml
 
 ## Plugin-specific files:
 
@@ -44,11 +45,3 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-.gitignore
-interface/src/main/resources/
-interface/src/test/
-interface/target/
-service/src/main/java/be/gerard/rhozeta/core/model/
-service/src/main/java/be/gerard/rhozeta/core/value/
-service/src/main/resources/
-service/src/test/

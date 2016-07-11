@@ -1,5 +1,10 @@
 package be.gerard.rhozeta.shared;
 
+import be.gerard.rhozeta.shared.model.Application;
+import be.gerard.rhozeta.shared.model.Translation;
+
+import java.util.List;
+
 /**
  * TranslationService
  *
@@ -7,4 +12,7 @@ package be.gerard.rhozeta.shared;
  * @version v0.0.1
  */
 public interface TranslationService {
+
+    List<Translation> findAll(Application.Key appKey);
+
 }

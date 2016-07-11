@@ -6,11 +6,11 @@ package be.gerard.rhozeta.shared.value;
  * @author bartgerard
  * @version v0.0.1
  */
-public class Value<T> {
+public class ValueObject<T> {
 
     private final T value;
 
-    public Value(T value) {
+    public ValueObject(T value) {
         this.value = value;
     }
 
