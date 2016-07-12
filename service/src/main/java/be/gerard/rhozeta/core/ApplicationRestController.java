@@ -24,7 +24,9 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 /**
  * ApplicationRestController
  *
+ * HATEOAS specs
  * http://stateless.co/hal_specification.html
+ * https://tools.ietf.org/html/draft-kelly-json-hal-08
  *
  * @author bartgerard
  * @version v0.0.1
