@@ -14,6 +14,15 @@ import java.util.stream.Collectors;
 /**
  * Linker
  *
+ * Template Method pattern for facilitating HATEOAS links.
+ *
+ * 2 types : single and collection
+ *
+ * By default only the self links require an implementation.
+ * Customization on other steps can be done by reimplementing those steps.
+ * Do NOT forget to call the required lower steps if those should remain.
+ * addHeaders can be adjusted without losing the surrounding functionality.
+ *
  * @author bartgerard
  * @version v0.0.1
  */
