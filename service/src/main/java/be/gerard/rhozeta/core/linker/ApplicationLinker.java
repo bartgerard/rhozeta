@@ -29,4 +29,5 @@ public class ApplicationLinker implements Linker<Application> {
         return linkTo(methodOn(ApplicationRestController.class).findAll()).withSelfRel();
     }
 
+
 }

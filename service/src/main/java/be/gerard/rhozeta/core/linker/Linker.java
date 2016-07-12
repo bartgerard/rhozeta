@@ -20,11 +20,19 @@ import java.util.stream.Collectors;
 public interface Linker<T> {
 
     default ResponseEntity<Resource<T>> toResponse(final T item, HttpStatus statusCode) {
-        return new ResponseEntity<>(toResource(item), statusCode);
+        return addHeaders(ResponseEntity.status(statusCode), item).body(toResource(item));
     }
 
     default ResponseEntity<Resources<Resource<T>>> toResponse(final Collection<T> items, HttpStatus statusCode) {
-        return new ResponseEntity<>(toResources(items), statusCode);
+        return addHeaders(ResponseEntity.status(statusCode), items).body(toResources(items));
+    }
+
+    default ResponseEntity.BodyBuilder addHeaders(final ResponseEntity.BodyBuilder builder, final T item) {
+        return builder;
+    }
+
+    default ResponseEntity.BodyBuilder addHeaders(final ResponseEntity.BodyBuilder builder, final Collection<T> items) {
+        return builder;
     }
 
     default Resource<T> toResource(final T item) {
