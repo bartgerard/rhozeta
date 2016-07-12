@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/rhozeta.iml" filepath="$PROJECT_DIR$/rhozeta.iml" />
       <module fileurl="file://$PROJECT_DIR$/interface/rhozeta-interface.iml" filepath="$PROJECT_DIR$/interface/rhozeta-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service/rhozeta-service.iml" filepath="$PROJECT_DIR$/service/rhozeta-service.iml" />
     </modules>
   </component>
 </project>

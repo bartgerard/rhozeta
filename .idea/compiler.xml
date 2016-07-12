@@ -23,11 +23,13 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="rhozeta-interface" />
+        <module name="rhozeta-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="rhozeta" target="1.8" />
       <module name="rhozeta-interface" target="1.8" />
+      <module name="rhozeta-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package be.gerard.rhozeta.shared;
+package be.gerard.rhozeta.shared.service;
 
 import be.gerard.rhozeta.shared.model.Application;
 import be.gerard.rhozeta.shared.model.Translation;

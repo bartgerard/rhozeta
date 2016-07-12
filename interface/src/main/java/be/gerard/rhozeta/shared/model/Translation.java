@@ -1,6 +1,7 @@
 package be.gerard.rhozeta.shared.model;
 
 import be.gerard.rhozeta.shared.value.ValueObject;
+import org.springframework.hateoas.ResourceSupport;
 
 /**
  * Translation
@@ -8,7 +9,7 @@ import be.gerard.rhozeta.shared.value.ValueObject;
  * @author bartgerard
  * @version v0.0.1
  */
-public class Translation {
+public class Translation extends ResourceSupport {
 
     private final Application.Key appKey;
 
@@ -47,9 +48,13 @@ public class Translation {
             super(value);
         }
 
+        public static Key of(String value) {
+            return new Key(value);
+        }
+
     }
 
-    public static enum Type {
+    public enum Type {
         ACTION,
         FIELD,
         TITLE,
@@ -60,6 +65,10 @@ public class Translation {
 
         public Value(String value) {
             super(value);
+        }
+
+        public static Value of(String value) {
+            return new Value(value);
         }
 
     }

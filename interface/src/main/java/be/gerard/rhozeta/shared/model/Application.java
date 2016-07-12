@@ -10,7 +10,10 @@ import be.gerard.rhozeta.shared.value.ValueObject;
  */
 public class Application {
 
-    private final Key key;
+    private Key key;
+
+    public Application() {
+    }
 
     public Application(Key key) {
         this.key = key;
@@ -20,10 +23,18 @@ public class Application {
         return key;
     }
 
+    public void setKey(Key key) {
+        this.key = key;
+    }
+
     public static class Key extends ValueObject<String> {
 
-        public Key(String key) {
-            super(key);
+        public Key(String value) {
+            super(value);
+        }
+
+        public static Key of(String value) {
+            return new Key(value);
         }
 
     }
