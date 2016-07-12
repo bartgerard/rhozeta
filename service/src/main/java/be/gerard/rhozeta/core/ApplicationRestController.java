@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.Resources;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,6 +24,8 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 /**
  * ApplicationRestController
  *
+ * http://stateless.co/hal_specification.html
+ *
  * @author bartgerard
  * @version v0.0.1
  */
@@ -33,13 +37,13 @@ public class ApplicationRestController {
     private ApplicationService applicationService;
 
     @RequestMapping(value = "/{key}", method = RequestMethod.GET)
-    public Resource<Application> findOne(@PathVariable("key") Application.Key key) {
-        return toResource(applicationService.findOne(key));
+    public ResponseEntity<Resource<Application>> findOne(@PathVariable("key") Application.Key key) {
+        return new ResponseEntity<>(toResource(applicationService.findOne(key)), HttpStatus.OK);
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public Resources<Resource<Application>> findAll() {
-        return toResources(applicationService.findAll());
+    public ResponseEntity<Resources<Resource<Application>>> findAll() {
+        return new ResponseEntity<>(toResources(applicationService.findAll()), HttpStatus.OK);
     }
 
     private Resources<Resource<Application>> toResources(Collection<Application> items) {
