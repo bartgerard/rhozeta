@@ -3,6 +3,8 @@ package be.gerard.rhozeta.core.linker;
 import be.gerard.rhozeta.core.ApplicationRestController;
 import be.gerard.rhozeta.shared.model.Application;
 import org.springframework.hateoas.Link;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
@@ -29,5 +31,14 @@ public class ApplicationLinker implements Linker<Application> {
         return linkTo(methodOn(ApplicationRestController.class).findAll()).withSelfRel();
     }
 
+    @Override
+    public ResponseEntity.BodyBuilder addHeaders(ResponseEntity.BodyBuilder builder, Application item) {
+        return builder.allow(HttpMethod.GET);
+    }
+
+    @Override
+    public ResponseEntity.BodyBuilder addHeaders(ResponseEntity.BodyBuilder builder, Collection<Application> items) {
+        return builder.allow(HttpMethod.GET);
+    }
 
 }
