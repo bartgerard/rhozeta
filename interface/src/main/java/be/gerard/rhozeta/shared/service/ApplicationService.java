@@ -3,6 +3,7 @@ package be.gerard.rhozeta.shared.service;
 import be.gerard.rhozeta.shared.model.Application;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * ApplicationService
@@ -12,7 +13,7 @@ import java.util.List;
  */
 public interface ApplicationService {
 
-    Application findOne(Application.Key key);
+    Optional<Application> findOne(Application.Key key);
 
     List<Application> findAll();
 
