@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Function;
 
 /**
  * ApplicationServiceImpl
@@ -37,6 +38,20 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public List<Application> findAll() {
         return applications;
+    }
+
+    @Override
+    public Application create(Application application) {
+        applications.add(application);
+        return application;
+    }
+
+    @Override
+    public Application update(Application application, Application.Key key) {
+        findOne(key).map(Function.identity())
+                .orElseThrow(IllegalArgumentException::new);
+
+        return application;
     }
 
 }

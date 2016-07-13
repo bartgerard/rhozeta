@@ -17,4 +17,8 @@ public interface ApplicationService {
 
     List<Application> findAll();
 
+    Application create(Application application);
+
+    Application update(Application application, Application.Key key);
+
 }
